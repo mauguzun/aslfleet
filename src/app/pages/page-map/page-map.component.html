@@ -1,0 +1,25 @@
+<div class="row find">
+    <div class="col-11" >
+
+        <input *ngIf="showSearch" matInput type="text" class="form-control box" placeholder="Find " [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of aircafts" [value]="option.id">
+                <mat-icon> airplanemode_active </mat-icon> {{ option.id }} <small>flight number</small>
+                <b>{{ option.flightNum }}</b>
+            </mat-option>
+        </mat-autocomplete>
+
+
+    </div>
+    <div class="col-1">
+        <button mat-mini-fab class="box search" color="primary"  (click)="toogleSearch()">
+            <mat-icon *ngIf="showSearch">close</mat-icon>
+            <mat-icon *ngIf="!showSearch">search</mat-icon>
+        </button>
+    </div>
+</div>
+
+
+
+
+<div #mapContainer id="map"></div>

@@ -1,0 +1,41 @@
+<div class="container" style="margin-top: 10px;">
+
+
+    <div class="row" class="top-header">
+
+        <div class="col-1">
+
+          
+            <button mat-mini-fab class="box menu" [matMenuTriggerFor]="menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item   >
+                    <mat-icon>home</mat-icon>
+                    <span>Images List</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>About</span>
+                </button>
+                <button mat-menu-item  >
+                    <mat-icon>email</mat-icon>
+                    <span>Form builder</span>
+                </button>
+                <button mat-menu-item >
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Privacy Policy Page</span>
+                </button>
+            </mat-menu>
+
+        </div>
+  
+
+    </div>
+
+    <router-outlet>
+    </router-outlet>
+
+</div>
+
