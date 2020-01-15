@@ -28,7 +28,8 @@ import {
   MatDialogModule
 } from '@angular/material';
 import { PageInfoComponent } from './pages/page-info/page-info.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageMapSettingsComponent } from './pages/page-map-settings/page-map-settings.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,13 @@ import { PageInfoComponent } from './pages/page-info/page-info.component';
     BaseLayoutComponent,
     PageMapComponent,
     PageTablesComponent,
-    PageInfoComponent
+    PageInfoComponent,
+    PageMapSettingsComponent
   ],
   imports: [
     MatAutocompleteModule,
- 
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -61,7 +64,7 @@ import { PageInfoComponent } from './pages/page-info/page-info.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PageInfoComponent]
+  entryComponents: [PageInfoComponent,PageMapSettingsComponent]
 
 })
 export class AppModule { }

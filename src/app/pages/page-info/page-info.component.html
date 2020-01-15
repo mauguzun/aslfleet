@@ -1,64 +1,77 @@
 <h4 mat-dialog-title>
-    <mat-icon matTooltip="Flight mode" > airplanemode_active </mat-icon>
-    <mat-icon matTooltip="Not Flight mode" > airplanemode_inactive </mat-icon>
+    <mat-icon  *ngIf="aircraft.isMoving" > airplanemode_active </mat-icon>
+    <mat-icon *ngIf="!aircraft.isMoving" > airplanemode_inactive </mat-icon>
     # {{ aircraft.id }}
 </h4>
 
 <mat-dialog-content>
+ 
 
 
-
-    <div>
+    <div *ngIf="aircraft.isMoving">
 
         <h4 mat-subheader>Flight Data</h4>
         <div class="row">
             <div class="col-6 maintitle">
                 Flight number </div>
             <div class="col-6 subinfo">
-                {{aircraft.flightNum}}
+                {{aircraft.flightInfo.flightNum}}
             </div>
         </div>
         <div class="row">
             <div class="col-6 maintitle">
                 From IATA </div>
             <div class="col-6 subinfo">
-                {{aircraft.from.iata }}
+                {{aircraft.flightInfo.from.iata }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 maintitle">
+                Departue </div>
+            <div class="col-6 subinfo">
+                {{aircraft.flightInfo.start |date:'short' }}
             </div>
         </div>
         <div class="row">
             <div class="col-6 maintitle">
                 From Country </div>
             <div class="col-6 subinfo">
-                {{aircraft.from.country }}
+                {{aircraft.flightInfo.from.country }}
             </div>
         </div>
         <div class="row">
             <div class="col-6 maintitle">
-                From Title </div>
+                From Airport Name  </div>
             <div class="col-6 subinfo">
-                {{aircraft.from.title }}
+                {{aircraft.flightInfo.from.title }}
             </div>
         </div>
         <div class="row">
             <div class="col-6 maintitle">
                 To IATA </div>
             <div class="col-6 subinfo">
-                {{aircraft.to.iata }}
+                {{aircraft.flightInfo.to.iata }}
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-6 maintitle">
+                Arrival </div>
+            <div class="col-6 subinfo">
+                {{aircraft.flightInfo.stop |date:'short' }}
+            </div>
+        </div>
         <div class="row">
             <div class="col-6 maintitle">
                 From Country </div>
             <div class="col-6 subinfo">
-                {{aircraft.to.country }}
+                {{aircraft.flightInfo.to.country }}
             </div>
         </div>
         <div class="row">
             <div class="col-6 maintitle">
                 From Title </div>
             <div class="col-6 subinfo">
-                {{aircraft.to.title }}
+                {{aircraft.flightInfo.to.title }}
             </div>
         </div>
 

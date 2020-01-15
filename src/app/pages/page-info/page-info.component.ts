@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Aircraft } from 'src/app/models/aircrafts';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-page-info',
@@ -9,8 +9,9 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 })
 export class PageInfoComponent implements OnInit {
 
-  aircraft:Aircraft;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Aircraft) { 
+  aircraft: Aircraft;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Aircraft) {
+
 
     this.aircraft = data;
   }
