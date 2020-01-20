@@ -1,5 +1,7 @@
+<app-loader *ngIf="loader"> </app-loader>
+
 <div class="row find">
-    <div class="col-10">
+    <div class="col-12 col-md-10">
         <input *ngIf="showSearch" matInput (keyup)="keyup($event)" 
         [formControl]="myControl" type="text"
             class="form-control box" placeholder="Find plane by  plane id  " [matAutocomplete]="auto">
@@ -18,7 +20,7 @@
 
 
 
-    <div class="col-2">
+    <div class="col-12 col-md-2 extra">
         <button mat-mini-fab class="box search" color="primary" (click)="toogleSearch()">
             <mat-icon *ngIf="showSearch">close</mat-icon>
             <mat-icon *ngIf="!showSearch">search</mat-icon>
@@ -34,5 +36,8 @@
 
 
 
+<button mat-fab color="warn" (click)="toPdf()" class="bottom bottom-right" >
+    <mat-icon >picture_as_pdf</mat-icon>
+</button>
 
 <div #mapContainer id="map"></div>

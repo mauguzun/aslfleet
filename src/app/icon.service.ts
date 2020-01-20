@@ -7,17 +7,34 @@ import { aircrafts } from './models/mock';
 })
 export class IconService {
 
+  private base = 'http://map.asl.nl.eu.org/';
+
   constructor() { }
 
   getIcon(aricraft: Aircraft) {
 
     if (!aricraft.isMoving) {
-      return 'assets/boing_stay/n.png';
+      return this.base + 'assets/boing_stay/n.png';
     }
-    const east = aricraft.location.lat - aricraft.flightInfo.to.location.lat;
-    const north = aricraft.location.long - aricraft.flightInfo.to.location.long;
-    console.log( aricraft.id + ' -  ' +  east + '-' + north);
+    const north = aricraft.location.lat - aricraft.flightInfo.to.location.lat;
+    const east = aricraft.location.long - aricraft.flightInfo.to.location.long;
 
-    return 'assets/boing_fly/n.png';
+
+    const isNorth = (Math.abs(north) > Math.abs(east));
+    if (isNorth) {
+      if (north < 0) {
+        return this.base + 'assets/boing_fly/n.png';
+      } else {
+        return this.base + 'assets/boing_fly/s.png';
+      }
+    } else {
+      if (east < 0) {
+        return this.base + 'assets/boing_fly/e.png';
+      }
+    }
+    return this.base + 'assets/boing_fly/w.png';
+    //  console.log( aricraft.id + ' -  ' +  east + '-' + north);
+
+    // return 'assets/boing_fly/n.png';
   }
 }

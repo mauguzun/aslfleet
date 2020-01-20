@@ -1,0 +1,13 @@
+<app-loader *ngIf="service.loader ;else chart"></app-loader>
+
+
+
+<ng-template #chart>
+    <div class="row ">
+        <div class="col-12">
+            <ngx-charts-pie-chart [view]="" (select)="this.service.click($event)" [animations]="true"
+                [results]="this.service.dataArray" [legend]="true" [explodeSlices]="true" [labels]="true">
+            </ngx-charts-pie-chart>
+        </div>
+    </div>
+</ng-template>

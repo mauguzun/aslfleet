@@ -4,7 +4,6 @@ export interface Aircraft {
     type: string;
 
     flightInfo?: FlightInfo;
-
     isMoving: boolean;
     location: Location;
     history?: Location[];

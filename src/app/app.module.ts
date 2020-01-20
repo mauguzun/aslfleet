@@ -7,6 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { PageMapComponent } from './pages/page-map/page-map.component';
 import { PageTablesComponent } from './pages/page-tables/page-tables.component';
+import { PageInfoComponent } from './pages/page-info/page-info.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageMapSettingsComponent } from './pages/page-map-settings/page-map-settings.component';
+import { LoaderComponent } from './loader/loader.component';
+import { PageStatisticComponent } from './pages/page-statistic/page-statistic.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import {
   MatButtonModule,
@@ -25,11 +31,9 @@ import {
   MatProgressBarModule,
   MatSelectModule,
   MatDialog,
-  MatDialogModule
+  MatDialogModule,
+  MatTableModule
 } from '@angular/material';
-import { PageInfoComponent } from './pages/page-info/page-info.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PageMapSettingsComponent } from './pages/page-map-settings/page-map-settings.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { PageMapSettingsComponent } from './pages/page-map-settings/page-map-set
     PageMapComponent,
     PageTablesComponent,
     PageInfoComponent,
-    PageMapSettingsComponent
+    PageMapSettingsComponent,
+    LoaderComponent,
+    PageStatisticComponent
   ],
   imports: [
     MatAutocompleteModule,
@@ -49,6 +55,8 @@ import { PageMapSettingsComponent } from './pages/page-map-settings/page-map-set
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatListModule,
+    MatTableModule,
+    NgxChartsModule,
     MatSnackBarModule,
     MatButtonModule,
     MatCheckboxModule,
